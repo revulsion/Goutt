@@ -1,7 +1,7 @@
 # Goutt
 
 ## What
-*GO*lang + *Mutt* + a constant desire to remind a friend of past trauma == Goutt 
+*GO*lang + M*utt* + a constant desire to remind a friend of past trauma == Goutt 
 
 ## Why 
 * Solve my email client issues
@@ -11,4 +11,17 @@
 
 ## Goals 
 Have a fast , modern, terminal based MUA 
+
+## Feature List 
+* Multi Account 
+* Show folders 
+* list emails 
+* cached emails 
+* use $EDITOR for composing 
+* view email including glamour 
+* paginate list of emails 
+* paginate email 
+* gpg support?
+* age support 
+* ssh sign support ?
 
