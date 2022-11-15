@@ -33,6 +33,6 @@ you need a config.json in the cwd (for now)
     "displayName": "Personal",
     "username": "user@example.com",
     "password": "password",
-    "server": "imapp.example.com:993"
+    "server": "imap.example.com:993"
 }
 ```
