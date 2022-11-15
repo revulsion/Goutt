@@ -29,8 +29,10 @@ Have a fast , modern, terminal based MUA
 ## Config file 
 you need a config.json in the cwd (for now)
 ```
+{
     "displayName": "Personal",
     "username": "user@example.com",
     "password": "password",
     "server": "imapp.example.com:993"
-}"
+}
+```
