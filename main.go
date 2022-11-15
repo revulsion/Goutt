@@ -1,12 +1,22 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
+	"io/ioutil"
+	"log"
 
 	tea "github.com/charmbracelet/bubbletea"
 )
 
+//TODO
 type accountsModel []struct{}
+
+type config struct {
+	Server   string
+	Username string
+	Password string
+}
 
 type folderModel struct {
 	folders  []string
@@ -28,23 +38,51 @@ type messageModel struct {
 
 func newFolderModel() folderModel {
 	m := folderModel{
-		folders:  {"inbox", "sent", "junk"},
+		folders:  []string{"inbox", "sent", "junk"},
 		selected: make(map[int]struct{}),
 	}
+	return m
 }
 
+//TODO
 func (m folderModel) Init() tea.Cmd {
 	return nil
 }
 
+//TODO
 func (m folderModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
-	return nil
+	return nil, nil
 }
 
+//TODO
 func (m folderModel) View() {
-	return nil
+	//return nil
 }
+
+func parseConfig() config {
+	// this should be $HOME/.config.json  (or even better XDG_HOME)
+	content, err := ioutil.ReadFile("./config.json")
+	if err != nil {
+		log.Fatal("Error when opening file: ", err)
+	}
+
+	// marshall me some json
+	var conf config
+	err = json.Unmarshal(content, &conf)
+	if err != nil {
+		log.Fatal("Error during Unmarshal(): ", err)
+	}
+
+	return conf
+}
+
+//TODO
+var iconn imapConnection
 
 func main() {
-	fmt.Println("placeholder...")
+	config := parseConfig()
+	fmt.Println(config.Username)
+	iconn.newImapClient(config)
+	iconn.getMailboxes()
+	iconn.logout()
 }

@@ -13,6 +13,7 @@
 Have a fast , modern, terminal based MUA 
 
 ## Feature List 
+* config.json 
 * Multi Account 
 * Show folders 
 * list emails 
@@ -25,3 +26,11 @@ Have a fast , modern, terminal based MUA
 * age support 
 * ssh sign support ?
 
+## Config file 
+you need a config.json in the cwd (for now)
+```
+    "displayName": "Personal",
+    "username": "user@example.com",
+    "password": "password",
+    "server": "imapp.example.com:993"
+}"
